@@ -162,25 +162,36 @@ ALLOW_DELETE=true
 ### プロジェクト構造
 
 ```
-src/
-├── index.ts              # MCPサーバーエントリーポイント
-├── database/
-│   ├── connection.ts     # MySQL接続管理
-│   └── queries.ts        # メトリクス付きクエリ実行
-├── tools/
-│   ├── select.ts         # SELECT操作
-│   ├── insert.ts         # INSERT操作
-│   ├── update.ts         # UPDATE操作
-│   ├── delete.ts         # DELETE操作
-│   ├── schema.ts         # スキーマ検査
-│   └── performance/      # パフォーマンス分析ツール
-│       ├── explain.ts    # クエリ実行計画
-│       ├── statistics.ts # テーブル統計
-│       └── monitoring.ts # リアルタイム監視
-├── utils/
-│   └── metrics.ts        # パフォーマンスメトリクス収集
-└── types/
-    └── index.ts          # TypeScript型定義
+mysql-mcp/
+├── src/
+│   └── index.ts          # MCPサーバーエントリーポイント
+├── dist/                 # ビルド出力ディレクトリ
+│   ├── index.js          # コンパイル済みエントリーポイント
+│   ├── database/
+│   │   ├── connection.js # MySQL接続管理
+│   │   └── queries.js    # メトリクス付きクエリ実行
+│   ├── tools/
+│   │   ├── select.js     # SELECT操作
+│   │   ├── insert.js     # INSERT操作
+│   │   ├── update.js     # UPDATE操作
+│   │   ├── delete.js     # DELETE操作
+│   │   ├── schema.js     # スキーマ検査
+│   │   ├── session.js    # セッション管理
+│   │   └── performance/  # パフォーマンス分析ツール
+│   │       ├── explain.js    # クエリ実行計画
+│   │       ├── statistics.js # テーブル統計
+│   │       └── monitoring.js # リアルタイム監視
+│   ├── utils/
+│   │   └── metrics.js    # パフォーマンスメトリクス収集
+│   ├── types/
+│   │   ├── index.js      # TypeScript型定義
+│   │   └── session.js    # セッション型定義
+│   └── session/
+│       └── manager.js    # セッション管理
+├── package.json          # プロジェクト設定
+├── tsconfig.json         # TypeScript設定
+├── .eslintrc.json        # ESLint設定
+└── README.md             # プロジェクトドキュメント
 ```
 
 ## 要件
