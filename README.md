@@ -69,7 +69,7 @@ DB_TIMEOUT=60000
     "mysql": {
       "command": "node",
       "args": ["/{path}/mysql-mcp/dist/index.js"],
-      "cwd": "/{path}/Documents/projects/mysql-mcp",
+      "cwd": "/{path}/mysql-mcp",
       "env": {
         "DB_HOST": "xxxxxxx",
         "DB_PORT": "xxxx",
